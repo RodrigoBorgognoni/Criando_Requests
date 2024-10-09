@@ -6,6 +6,6 @@ async function listaVideos() {
 
 }
 
-export const apiResponse = {
+export const connectApi = {
     listaVideos
 }
