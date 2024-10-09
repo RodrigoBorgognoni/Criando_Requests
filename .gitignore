@@ -17,6 +17,7 @@ dist/
 *.log
 
 # Package files
+package.json
 *.jar
 
 # JetBrains IDE
@@ -43,4 +44,6 @@ npm-debug.log
 .idea/
 .vscode/
 jsconfig.json
+
+# Ignore PDF files
 *.pdf
