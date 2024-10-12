@@ -23,6 +23,14 @@ async function addVideos(titulo, descricao, url, imagem) {
     return apiResponse;
 }
 
+async function buscaVideos(query) {
+    const conexaoApi = await fetch(`http://localhost:3000/videos?q=${query}`);
+    const apiResponse = await conexaoApi.json();
+
+    return apiResponse;
+    
+}
+
 export const connectApi = {
-    listaVideos, addVideos
+    listaVideos, addVideos, buscaVideos
 };

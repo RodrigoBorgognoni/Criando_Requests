@@ -2,7 +2,7 @@ import { connectApi } from './connectApi.js';
 
 const lista = document.querySelector('[data-lista]');
 
-function videoCard(titulo, descricao, url, imagem) {
+export default function videoCard(titulo, descricao, url, imagem) {
     const video = document.createElement('li'); //cria elemento li no dom
     video.className = 'videos__item'; //elemento com classe videos__item
     //cria a estrutura para o elemento li
