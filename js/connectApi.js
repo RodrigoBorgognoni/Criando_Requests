@@ -18,6 +18,9 @@ async function addVideos(titulo, descricao, url, imagem) {
             imagem: imagem,
         }),
     });
+    if (!conexaoApi.ok) {
+        throw new Error('Não foi possível enviar o Video');
+    }
     const apiResponse = await conexaoApi.json();
 
     return apiResponse;
@@ -28,9 +31,10 @@ async function buscaVideos(query) {
     const apiResponse = await conexaoApi.json();
 
     return apiResponse;
-    
 }
 
 export const connectApi = {
-    listaVideos, addVideos, buscaVideos
+    listaVideos,
+    addVideos,
+    buscaVideos,
 };

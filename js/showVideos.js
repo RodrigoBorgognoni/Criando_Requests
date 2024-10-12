@@ -21,15 +21,22 @@ export default function videoCard(titulo, descricao, url, imagem) {
 
 //async function para chamar função que conecta com a API
 async function listaVideo() {
-    const listaApi = await connectApi.listaVideos();
-    //para cada elemento da listaApi
-    listaApi.forEach((element) => {
-        //adiciona um filho à lista(ul)
-        lista.appendChild(
-            //filho será retorno da função videoCard (li)
-            videoCard(element.titulo, element.descricao, element.url, element.imagem)
-        );
-    });
+    try {
+        const listaApi = await connectApi.listaVideos();
+        //para cada elemento da listaApi
+        listaApi.forEach((element) => {
+            //adiciona um filho à lista(ul)
+            lista.appendChild(
+                //filho será retorno da função videoCard (li)
+                videoCard(element.titulo, element.descricao, element.url, element.imagem)
+            );
+        });
+    } catch (e) {
+        lista.innerHTML = `<div>
+                            <h2 class="mensagem__titulo">Videos não carregados.</h2>
+                            <p class="mensagem__titulo">${e}</p>
+                            </div>`;
+    }
 }
 
 listaVideo();

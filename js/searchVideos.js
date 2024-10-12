@@ -9,9 +9,9 @@ async function searchVideo(evento) {
 
     const lista = document.querySelector('[data-lista]');
 
-/* Enquanto lista tiver um primeiroFilho, remove primeirofilho */
-    while(lista.firstChild){
-        lista.removeChild(lista.firstChild)
+    /* Enquanto lista tiver um primeiroFilho, remove primeirofilho */
+    while (lista.firstChild) {
+        lista.removeChild(lista.firstChild);
     }
 
     search.forEach((elemento) =>
